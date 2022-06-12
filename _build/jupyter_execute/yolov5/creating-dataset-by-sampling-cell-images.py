@@ -116,24 +116,25 @@ ls {OUTPUT_DIR}
 # - there are small speckles which are not cells
 # 
 # 
-# <img src='assets/Screenshot from 2022-06-11 09-02-36.png' />
+# ![](./assets/screenshot-roboflow.png)
 
 # ## Training a Model
 # The YOLOv5 guide came with a [Google Colab notebook](https://colab.research.google.com/github/roboflow-ai/yolov5-custom-training-tutorial/blob/main/yolov5-custom-training.ipynb) that was easy to modify to my own examples (dataset, image sizes, etc)
 # - Following the guide, I changed the dataset to the one we created in RoboFlow
 # - In order to preserve information about cell size, for training I set the image size to be the same as the actual image size for the sampled training images. When running inference/detection, I used the full image size (e.g. ~2000px in my case).
 # 
-# <img src="assets/Screenshot from 2022-06-12 08-21-10.png"/>
+# ![](./assets/screenshot-colab.png)
 
 # ## Inference and Results
 # I uploaded the original images to google drive separately and modified the notebook to use them
 # 
 # The results were overall quite good, although I later found I should've labeled more of the lighter cells in the training data; so the model also misses the lighter cells.
-# <img src="assets/yolov5-results/Rat2slide1sample3-L.png"/>
+# 
+# ![](./assets/yolov5-results/Rat2slide1sample3-L.png)
 
 # ## Interacting with the results (correcting/viewing)
 # This will allow us to add/remove cells that were missed
-# <img src="assets/Screenshot from 2022-06-12 09-58-54.png"/>
+# ![](./assets/screenshot-napari-cells.png)
 
 # ### Loading the YOLO labels
 
@@ -177,7 +178,7 @@ all_vertices = np.concatenate(all_vertices)
 
 # ### Viewing them with Napari
 
-# In[77]:
+# In[ ]:
 
 
 
@@ -220,8 +221,7 @@ cell_counts = cells_df.groupby('image').apply(lambda x: len(x.cell.unique()))
 
 
 # ## Getting cells in an area
-# 
-# <img src="assets/Screenshot from 2022-06-12 10-17-28.png"/>
+# ![](./assets/screenshot-napari-zone.png)
 
 # In[ ]:
 
