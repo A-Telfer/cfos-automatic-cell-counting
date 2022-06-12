@@ -223,7 +223,7 @@ cell_counts = cells_df.groupby('image').apply(lambda x: len(x.cell.unique()))
 # 
 # <img src="assets/Screenshot from 2022-06-12 10-17-28.png"/>
 
-# In[120]:
+# In[ ]:
 
 
 zone_layer = viewer.add_shapes(name='zone', ndim=3, edge_color='red', face_color=[0.,0.,1.,0.3])
